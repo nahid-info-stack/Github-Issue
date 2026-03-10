@@ -85,10 +85,16 @@
 
 - Create a readme file and answer this question on your own. Don’t copy-paste from Google or any AI chatbot. 
     - 1️⃣ What is the difference between var, let, and const?
+    ans: var redeclare and let and const not redecleare var function scope.
     - 2️⃣ What is the spread operator (...)?
+    ans: spread array and object elements expand copy shorthand
     - 3️⃣ What is the difference between map(), filter(), and forEach()?
+    ans: map and filter both return new array and always work to loop .forEach dont retarn anything forEach only work like a function
+
     - 4️⃣ What is an arrow function?
+    ans: arrow function is a sorthand function syntax in mordern javascript.
     - 5️⃣ What are template literals?
+    ans:Template literelas a easy way to write multiline string,variable.
 
 
 ---
