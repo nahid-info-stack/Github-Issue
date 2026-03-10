@@ -31,8 +31,8 @@ const displayIssueShow = (card)=> {
     issueInfoContainer.innerHTML= `
     <div class="bg-base-100 rounded-xl p-8 space-y-4">
     <div>
-        <h2 class="text-2xl font-bold text-[#1F2937]">${card.title}</h2>
-        <div class="flex items-center gap-5">
+        <h2 class="text-2xl font-bold text-[#1F2937] mb-2">${card.title}</h2>
+        <div class="flex items-center gap-6">
             <button class="btn btn-success">${card.status}</button>
             <li class="text-[#64748B] text-xs">${card.assignee} Ahmed</li>
             <li class="text-[#64748B] text-xs">22/02/2026</li>
@@ -82,7 +82,7 @@ const spiner = (status) =>{
 }
 
 const displayIssues = (issues) =>{
-    console.log(issues);
+   // console.log(issues);
     spiner(false);
     // 1. get the container 
     document.getElementById("cardCount").innerText =issues.length;
@@ -92,7 +92,7 @@ const displayIssues = (issues) =>{
     closedContainer.innerHTML = "";
     // 2. show every single element
     issues.forEach(issue => {
-        console.log(issue);
+        //console.log(issue);
 
         // 3. create a chiled
     const createCard = document.createElement('div');
@@ -143,7 +143,7 @@ const btnUnActive = ['btn-soft'];
 const issueContainer = document.getElementById('issue-container');
 const openContainer = document.getElementById('open-container');
 const closedContainer = document.getElementById('closed-container');
-console.log(issueContainer,openContainer,closedContainer)
+//console.log(issueContainer,openContainer,closedContainer)
 
 const allSection = [issueContainer,openContainer,closedContainer];
 const activeBtn = (active)=>{
@@ -190,6 +190,15 @@ const activeBtn = (active)=>{
 
 }
 
+document.getElementById('btn-search').addEventListener('click', () => {
+   const input = document.getElementById('input-search');
+   const searchValue = input.value.toLowerCase();
+   console.log(searchValue);
+
+   const filtered = allIssue.filter(issue => issue.title.toLowerCase().includes(searchValue) );
+   displayIssues(filtered);
+});
 
 activeBtn(allActive);
 issueLoding();
+
